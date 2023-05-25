@@ -32,5 +32,15 @@ echo "Compile Error in Submission"
 exit
 else
 java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples
+status=$?
+if [[ $status == 0 ]]
+then
+echo "Test Passed"
+elif [[ $status == 1 ]]
+then
+echo "Test Failed"
+else
+echo "Weird Exit Code"
+fi
 fi
 fi
